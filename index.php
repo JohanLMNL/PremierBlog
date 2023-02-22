@@ -16,7 +16,7 @@ try {
         else if($_GET['page'] == 'newarticle'){
             //VERIFICATIONS FORMULAIRE
             //Tous les champs sont-ils remplis ?
-            if(!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['description']) && !empty($_POST['author'])){
+            if(!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['description']) && !empty($_POST['author']) && !empty($_POST['categorie'])){
                 // Est-ce qu'il y a une image ?
                 if(isset($_FILES['image']) && $_FILES['image']['error'] === 0){
                     //L'image est elle trop lourde ?
@@ -29,9 +29,9 @@ try {
                         if(in_array($extensionImage, $extensionsArray)) {
 
                             $newImageName = time().rand().rand().'.'.$extensionImage;
-                            $imagePath = 'public/upload/'.$newImageName;
+                            $imagePath = '/public/uploads/'.$newImageName;
                             move_uploaded_file($_FILES['image']['tmp_name'], 'public/uploads/'.$newImageName);
-                            addNewArticle(htmlspecialchars($_POST['title']),htmlspecialchars($_POST['content']),htmlspecialchars($_POST['description']),htmlspecialchars($_POST['author']),$imagePath);
+                            addNewArticle(htmlspecialchars($_POST['title']),htmlspecialchars($_POST['content']),htmlspecialchars($_POST['description']),htmlspecialchars($_POST['author']),$imagePath,htmlspecialchars($_POST['categorie']));
                         }
                     }
                }    

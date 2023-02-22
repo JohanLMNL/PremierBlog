@@ -25,9 +25,9 @@
         require('view/OneArticleView.php');
     }
 
-    function addNewArticle($title, $content, $description, $author, $image) {
+    function addNewArticle($title, $content, $description, $author, $image, $categorie) {
         $articleManager = new ArticleManager();
-        $result = $articleManager->postArticle($title, $content, $description, $author, $image);
+        $result = $articleManager->postArticle($title, $content, $description, $author, $image, $categorie);
 
         if($result === false ) {
             throw new Exception("Impossible d'ajouter un article pour le moment");

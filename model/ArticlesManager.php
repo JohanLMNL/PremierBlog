@@ -13,10 +13,10 @@ class ArticleManager extends ConnectManager{
         return $requete;
     }
 
-    public function postArticle($title, $content, $description, $author, $image) {
+    public function postArticle($title, $content, $description, $author, $image, $categorie) {
         $db = $this->connection();
-        $requete = $db->prepare('INSERT INTO articles(title, content, description, author, image) VALUES (?,?,?,?,?)');
-        $result = $requete->execute([$title, $content, $description, $author, $image]);
+        $requete = $db->prepare('INSERT INTO articles(title, content, description, author, image, categorie) VALUES (?,?,?,?,?,?)');
+        $result = $requete->execute([$title, $content, $description, $author, $image, $categorie]);
 
         return $result;
     }

@@ -28,6 +28,16 @@
             </p>
 
             <p>
+                <label class='text-center' for='categorie'>Titre de l'article</label></br>
+                <select id="categorie" name='categorie'>
+                    <option value="">--Choisissez une option--</option>
+                    <option value="code">Code</option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="projet">Projet</option>
+                </select>
+            </p>
+
+            <p>
                 <label class='text-center' for='image'>Image</label></br>
                 <input type="file" name="image" id="image">
             </p>

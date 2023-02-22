@@ -11,7 +11,11 @@
                 
         ?>
                 <h2><?=$article['title']?></h2>
-                <p><?=$article['title']?></p>
+                <img src='<?=$article['image']?>' alt="une image">
+                <p><?=$article['description']?></p>
+                <p><?=$article['content']?></p>
+                <p><?=$article['author']?></p>
+                <p><?=$article['date']?></p>
 
         <?php
             $title = $article['title'];
